@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#778877"
+    tools:context=".view.UserDetailsActivity">
+
+    <TextView
+        style="@style/DetailLabelStyle"
+        android:id="@+id/details_id_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/std_dp"
+        android:text="ID:"
+        app:layout_constraintStart_toStartOf="@id/back_button"
+        app:layout_constraintBottom_toTopOf="@id/details_name_text"
+        />
+
+    <TextView
+        style="@style/DetailUserStyle"
+        android:id="@+id/details_id_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="666"
+        app:layout_constraintStart_toEndOf="@id/details_id_label"
+        app:layout_constraintBottom_toBottomOf="@id/details_id_label"
+        />
+
+<!--    <TextView-->
+<!--        style="@style/DetailLabelStyle"-->
+<!--        android:id="@+id/details_name_label"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="@dimen/std_dp"-->
+<!--        android:text="Name:"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/details_title_label"-->
+<!--        app:layout_constraintStart_toStartOf="@id/details_title_label"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        style="@style/DetailLabelStyle"-->
+<!--        android:id="@+id/details_title_label"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/std_dp"-->
+<!--        android:text="Title:"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/back_button"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        />-->
+
+    <TextView
+        style="@style/DetailUserStyle"
+        android:id="@+id/details_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/std_dp"
+        tools:text="John Doe"
+        app:layout_constraintStart_toStartOf="@id/back_button"
+        app:layout_constraintBottom_toTopOf="@id/details_title_text"
+        />
+
+    <TextView
+        style="@style/DetailUserStyle"
+        android:id="@+id/details_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/std_dp"
+        tools:text="Trainee"
+        app:layout_constraintStart_toStartOf="@id/back_button"
+        app:layout_constraintBottom_toTopOf="@id/back_button"
+        />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="back"
+        android:layout_margin="@dimen/std_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

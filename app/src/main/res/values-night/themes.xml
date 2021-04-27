@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SQLiteDatabasePrj" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.SQLiteDatabasePrj" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +12,24 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+    <style name="MyUserStyle">
+        <item name="android:textColor">#010101</item>
+        <item name="android:fontFamily">cursive</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="MyLableStyle">
+        <item name="android:fontFamily">serif-monospace</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="DetailUserStyle">
+        <item name="android:fontFamily">cursive</item>
+        <item name="android:textColor">#010101</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+    <style name="DetailLabelStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">serif-monospace</item>
+        <item name="android:textSize">32sp</item>
     </style>
 </resources>

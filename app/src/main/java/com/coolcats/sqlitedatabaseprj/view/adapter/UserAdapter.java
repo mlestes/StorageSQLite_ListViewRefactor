@@ -14,10 +14,17 @@ import java.util.List;
 public class UserAdapter extends BaseAdapter {
 
     private List<User> userList;
-//    private UserDelegate userDelegate;
+    private UserDelegate userDelegate;
 
-    public UserAdapter(List<User> userList) {
+    public interface UserDelegate{
+        void selectUser(User user);
+    }
+
+    public UserAdapter(List<User> userList, UserDelegate userDelegate){
+
         this.userList = userList;
+        this.userDelegate = userDelegate;
+
     }
 
     @Override
@@ -43,6 +50,10 @@ public class UserAdapter extends BaseAdapter {
 
         binding.nameText.setText(userList.get(position).getName());
         binding.titleText.setText(userList.get(position).getPosition().toString());
+
+        binding.getRoot().setOnClickListener(v -> {
+            userDelegate.selectUser(userList.get(position));
+        });
 
         return binding.getRoot();
     }

@@ -28,7 +28,7 @@ import java.util.List;
 
 import static com.coolcats.sqlitedatabaseprj.util.Logger.logMessage;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, UserAdapter.UserDelegate {
 
     private SharedPreferences sharedPreferences;
     private UserDatabaseHelper dbHelper;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         binding.spinner.setOnItemSelectedListener(this);
         dbHelper = new UserDatabaseHelper(this);
         userList = new ArrayList<>();
-        UserAdapter userAdapter = new UserAdapter(userList);
+        UserAdapter userAdapter = new UserAdapter(userList, this);
         binding.userListview.setAdapter(userAdapter);
 
         MyHelper.readDB(dbHelper, userList);
@@ -121,6 +121,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         toastMessage("Please make a selection!");
+    }
+
+    @Override
+    public void selectUser(User user) {
+        Intent intent = new Intent(this, UserDetailsActivity.class);
+        intent.putExtra("user", user);
+        startActivity(intent);
     }
 }
 
