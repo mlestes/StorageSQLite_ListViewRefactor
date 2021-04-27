@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyUserStyle">
+        <item name="android:textColor">#010101</item>
+        <item name="android:fontFamily">cursive</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="MyLableStyle">
+        <item name="android:fontFamily">serif-monospace</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
