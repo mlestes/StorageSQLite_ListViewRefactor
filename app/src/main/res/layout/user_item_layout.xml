@@ -14,7 +14,7 @@
         android:layout_height="32dp"
         android:layout_margin="4dp"
         android:background="@drawable/list_image_background"
-        tools:src="@drawable/person_work"
+        tools:src="@drawable/trainee_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />

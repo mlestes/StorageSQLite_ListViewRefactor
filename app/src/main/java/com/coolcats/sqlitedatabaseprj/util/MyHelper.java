@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.widget.Toast;
 
+import com.coolcats.sqlitedatabaseprj.R;
 import com.coolcats.sqlitedatabaseprj.model.User;
 import com.coolcats.sqlitedatabaseprj.model.db.UserDatabaseHelper;
 
@@ -22,6 +23,7 @@ public class MyHelper {
 
         Cursor dbC = dbHelper.getAllUsers();
         dbC.moveToPosition(-1);
+        list.clear();
         while(dbC.moveToNext()){
             String name = dbC.getString(dbC.getColumnIndex(NAME_COLUMN));
             int id = dbC.getInt(dbC.getColumnIndex(ID_COLUMN));
@@ -77,5 +79,22 @@ public class MyHelper {
 
     private static void makeToast(Context context, String s) {
         Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+    }
+
+    public static int getImage(Position position){
+        switch (position){
+            case ANDROID_DEVELOPER:
+                return R.drawable.android_image;
+            case IOS_DEVELOPER:
+                return R.drawable.apple_icon;
+            case MANAGER:
+                return R.drawable.manager_image;
+            case INSTRUCTOR:
+                return R.drawable.instructor_image;
+            case TRAINEE:
+                return R.drawable.trainee_image;
+            default:
+                return R.drawable.ic_work;
+        }
     }
 }

@@ -3,7 +3,6 @@ package com.coolcats.sqlitedatabaseprj.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 
 import com.bumptech.glide.Glide;
 import com.coolcats.sqlitedatabaseprj.R;
@@ -25,7 +24,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         if(user != null){
             Glide.with(binding.getRoot())
                     .load(user.getImage())
-                    .placeholder(R.drawable.person_work)
+                    .placeholder(MyHelper.getImage(user.getPosition()))
                     .into(binding.detailImage);
 
             binding.detailsIdText.setText(user.getId()+"");

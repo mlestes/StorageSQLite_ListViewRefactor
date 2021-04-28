@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private SharedPreferences sharedPreferences;
     private UserDatabaseHelper dbHelper;
+    private UserAdapter userAdapter;
     private ActivityMainBinding binding;
     private List<User> userList;
     private List<String> options = new ArrayList<String>(Arrays.asList("Android Developer", "IOS Developer", "Manager", "Instructor", "Trainee"));
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         binding.spinner.setOnItemSelectedListener(this);
         dbHelper = new UserDatabaseHelper(this);
         userList = new ArrayList<>();
-        UserAdapter userAdapter = new UserAdapter(userList, this);
+        userAdapter = new UserAdapter(userList, this);
         binding.userListview.setAdapter(userAdapter);
 
         MyHelper.readDB(dbHelper, userList);
@@ -65,10 +66,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 User newUser = new User(binding.usernameEdittext.getText().toString().trim(), MyHelper.getValue(options.get(id)));
                 dbHelper.insertUser(newUser);
                 MyHelper.readDB(dbHelper, userList);
-                binding.usernameEdittext.setText("");
                 displayUsers(userList);
-                finish();
-                startActivity(getIntent());
+                binding.usernameEdittext.setText("");
+
             }
         });
     }
@@ -78,10 +78,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void displayUsers(List<User> users) {
-        logMessage("Current users");
-        for(int i = 0; i < users.size(); i++)
-            logMessage(users.get(i).toString());
-
+//        logMessage("Current users");
+//        for(int i = 0; i < users.size(); i++)
+//            logMessage(users.get(i).toString());
+        userAdapter.updateList(users);
 
     }
 

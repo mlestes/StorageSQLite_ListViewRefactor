@@ -11,7 +11,6 @@ import com.coolcats.sqlitedatabaseprj.R;
 import com.coolcats.sqlitedatabaseprj.databinding.UserItemLayoutBinding;
 import com.coolcats.sqlitedatabaseprj.model.User;
 import com.coolcats.sqlitedatabaseprj.util.MyHelper;
-import com.coolcats.sqlitedatabaseprj.util.Position;
 
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class UserAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public User getItem(int position) {
         return userList.get(position);
     }
 
@@ -54,8 +53,8 @@ public class UserAdapter extends BaseAdapter {
 
         Glide.with(parent)
                 .applyDefaultRequestOptions(RequestOptions.circleCropTransform())
-                .load(userList.get(position).getImage())
-                .placeholder(R.drawable.person_work)
+                .load(MyHelper.getImage(userList.get(position).getPosition()))
+                .placeholder(R.drawable.ic_work)
                 .into(binding.layoutImage);
 
         binding.nameText.setText(userList.get(position).getName());
@@ -67,4 +66,10 @@ public class UserAdapter extends BaseAdapter {
 
         return binding.getRoot();
     }
+
+    public void updateList(List<User> userList){
+        notifyDataSetChanged();
+        this.userList = userList;
+    }
+
 }

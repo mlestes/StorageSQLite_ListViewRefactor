@@ -12,7 +12,7 @@
         android:layout_width="320dp"
         android:layout_height="320dp"
         android:layout_margin="40dp"
-        tools:src="@drawable/person_work"
+        tools:src="@drawable/trainee_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/details_id_text"
