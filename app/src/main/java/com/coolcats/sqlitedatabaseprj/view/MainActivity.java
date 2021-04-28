@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        toastMessage(options.get(i) + ", "+l);
+//        toastMessage(options.get(i) + ", "+l);
         id = i;
     }
 

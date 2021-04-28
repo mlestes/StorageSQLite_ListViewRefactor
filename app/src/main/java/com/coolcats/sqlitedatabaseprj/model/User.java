@@ -12,6 +12,13 @@ public class User implements Serializable {
     private String name;
     private int id;
     private Position position;
+    private String image;
+
+    public User(String name, Position position, String image) {
+        this.name = name;
+        this.position = position;
+        this.image = image;
+    }
 
     public User(String name, Position position) {
         this.name = name;
@@ -44,12 +51,21 @@ public class User implements Serializable {
         this.position = position;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", position=" + position +
+                ", image=" + image +
                 '}';
     }
 

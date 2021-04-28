@@ -7,6 +7,17 @@
     android:background="#778877"
     tools:context=".view.UserDetailsActivity">
 
+    <ImageView
+        android:id="@+id/detail_image"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_margin="40dp"
+        tools:src="@drawable/person_work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/details_id_text"
+    />
+
     <TextView
         style="@style/DetailLabelStyle"
         android:id="@+id/details_id_label"

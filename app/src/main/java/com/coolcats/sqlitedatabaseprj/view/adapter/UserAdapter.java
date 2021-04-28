@@ -5,6 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.coolcats.sqlitedatabaseprj.R;
 import com.coolcats.sqlitedatabaseprj.databinding.UserItemLayoutBinding;
 import com.coolcats.sqlitedatabaseprj.model.User;
 import com.coolcats.sqlitedatabaseprj.util.Position;
@@ -47,6 +50,12 @@ public class UserAdapter extends BaseAdapter {
         UserItemLayoutBinding binding = UserItemLayoutBinding.inflate(LayoutInflater.from(parent.getContext()),
                 parent,
                 false);
+
+        Glide.with(parent)
+                .applyDefaultRequestOptions(RequestOptions.circleCropTransform())
+                .load(userList.get(position).getImage())
+                .placeholder(R.drawable.person_work)
+                .into(binding.layoutImage);
 
         binding.nameText.setText(userList.get(position).getName());
         binding.titleText.setText(userList.get(position).getPosition().toString());
