@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/std_dp"
     android:padding="@dimen/std_dp"
-    android:background="@drawable/list_item_background"
+    android:background="@drawable/list_background_select"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
