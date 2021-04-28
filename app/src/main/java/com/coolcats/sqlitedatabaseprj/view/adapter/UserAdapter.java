@@ -10,6 +10,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.coolcats.sqlitedatabaseprj.R;
 import com.coolcats.sqlitedatabaseprj.databinding.UserItemLayoutBinding;
 import com.coolcats.sqlitedatabaseprj.model.User;
+import com.coolcats.sqlitedatabaseprj.util.MyHelper;
 import com.coolcats.sqlitedatabaseprj.util.Position;
 
 import java.util.List;
@@ -58,7 +59,7 @@ public class UserAdapter extends BaseAdapter {
                 .into(binding.layoutImage);
 
         binding.nameText.setText(userList.get(position).getName());
-        binding.titleText.setText(userList.get(position).getPosition().toString());
+        binding.titleText.setText(MyHelper.fromPosition(userList.get(position).getPosition()));
 
         binding.getRoot().setOnClickListener(v -> {
             userDelegate.selectUser(userList.get(position));

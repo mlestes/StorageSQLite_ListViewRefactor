@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private UserDatabaseHelper dbHelper;
     private ActivityMainBinding binding;
     private List<User> userList;
-    private List<String> options = new ArrayList<String>(Arrays.asList("ANDROID_DEVELOPER", "IOS_DEVELOPER", "MANAGER"));
+    private List<String> options = new ArrayList<String>(Arrays.asList("Android Developer", "IOS Developer", "Manager", "Instructor", "Trainee"));
     private int id;
 
     @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         binding.addUserButton.setOnClickListener(view -> {
 
             if(MyHelper.checkInput(this, binding.usernameEdittext.getText().toString().trim(), 4)) {
-                User newUser = new User(binding.usernameEdittext.getText().toString().trim(), Position.valueOf(options.get(id)));
+                User newUser = new User(binding.usernameEdittext.getText().toString().trim(), MyHelper.getValue(options.get(id)));
                 dbHelper.insertUser(newUser);
                 MyHelper.readDB(dbHelper, userList);
                 binding.usernameEdittext.setText("");

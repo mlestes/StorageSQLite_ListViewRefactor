@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide;
 import com.coolcats.sqlitedatabaseprj.R;
 import com.coolcats.sqlitedatabaseprj.databinding.ActivityUserDetailsBinding;
 import com.coolcats.sqlitedatabaseprj.model.User;
+import com.coolcats.sqlitedatabaseprj.util.MyHelper;
 
 public class UserDetailsActivity extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class UserDetailsActivity extends AppCompatActivity {
 
             binding.detailsIdText.setText(user.getId()+"");
             binding.detailsNameText.setText(user.getName());
-            binding.detailsTitleText.setText(user.getPosition().toString());
+            binding.detailsTitleText.setText(MyHelper.fromPosition(user.getPosition()));
         }
 
         binding.backButton.setOnClickListener(view -> {

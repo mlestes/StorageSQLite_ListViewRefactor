@@ -46,6 +46,35 @@ public class MyHelper {
         return true;
     }
 
+    public static Position getValue(String string){
+
+        Position position;
+        if(string.equals("Android Developer"))
+            return Position.ANDROID_DEVELOPER;
+        else if(string.equals("IOS Developer"))
+            return Position.IOS_DEVELOPER;
+        else if(string.equals("Manager"))
+            return Position.MANAGER;
+        else if(string.equals("Instructor"))
+            return Position.INSTRUCTOR;
+        else return Position.TRAINEE;
+
+    }
+
+    public static String fromPosition(Position position){
+
+        if(position.equals(Position.ANDROID_DEVELOPER))
+            return "Android Developer";
+        else if(position.equals(Position.IOS_DEVELOPER))
+            return "IOS Developer";
+        else if(position.equals(Position.MANAGER))
+            return "Manager";
+        else if(position.equals(Position.INSTRUCTOR))
+            return "Instructor";
+        else
+            return "Trainee";
+    }
+
     private static void makeToast(Context context, String s) {
         Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
     }
